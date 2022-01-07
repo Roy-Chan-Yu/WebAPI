@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DemoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Book">
+    <Key>
+      <PropertyRef Name="BookID" />
+    </Key>
+    <Property Name="BookID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ISBN" Type="varchar" MaxLength="17" Nullable="false" />
+    <Property Name="category" Type="nvarchar" MaxLength="20" />
+    <Property Name="BookName" Type="nvarchar" MaxLength="20" />
+    <Property Name="Publisher" Type="nvarchar" MaxLength="20" />
+    <Property Name="PublicTime" Type="date" Nullable="false" />
+    <Property Name="Author" Type="nvarchar" MaxLength="20" />
+    <Property Name="Price" Type="decimal" Precision="20" Scale="3" />
+    <Property Name="Location" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="DemoModelStoreContainer">
+    <EntitySet Name="Book" EntityType="Self.Book" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
